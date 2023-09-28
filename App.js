@@ -1,21 +1,27 @@
 import React from "react";
 import { StyleSheet, SafeAreaView, Text } from "react-native";
+import "@tamagui/core/reset.css";
+import { TamaguiProvider } from "tamagui";
+import config from "./tamagui.config";
 
 export default class App extends React.Component {
   render() {
     return (
-      <SafeAreaView style={styles.container}>
-        <Text style={styles.h1}>Hello CodeSandbox</Text>
-        <Text style={styles.h2}>
-          Start editing to see some magic happen, even on your mobile device!
-        </Text>
-        <br />
-        <br />
-        <Text style={styles.paragraph}>
-          Open Expo on your mobile device with scanning the QR code in the
-          application log under the start tab.
-        </Text>
-      </SafeAreaView>
+      <TamaguiProvider config={config}>
+        <SafeAreaView style={styles.container}>
+          <Text style={styles.h1}>Hello CodeSandbox</Text>
+          <Text style={styles.h2}>
+            Starttt editing to see some magic happen, even on your mobile
+            device!
+          </Text>
+          <br />
+          <br />
+          <Text style={styles.paragraph}>
+            Open Expo on your mobile device with scanning the QR code in the
+            application log under the start tab.
+          </Text>
+        </SafeAreaView>
+      </TamaguiProvider>
     );
   }
 }
